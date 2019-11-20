@@ -11,6 +11,7 @@ extents = Vector2( 28.0315, 40.0435 )
 "Enemies",
 ]]
 script = ExtResource( 1 )
+pub_name = "Crate"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

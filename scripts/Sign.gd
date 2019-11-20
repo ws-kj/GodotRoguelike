@@ -13,8 +13,3 @@ func _on_Area2D_body_entered(body):
 func draw_sign(txt):
 	print(txt)
 	game_log.write(txt)
-
-
-func _on_Area2D_body_exited(body):
-		if body.is_in_group("Player"):
-			draw_sign("")

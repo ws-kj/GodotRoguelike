@@ -30,6 +30,5 @@ func _physics_process(delta):
 	for a in area.get_overlapping_bodies():
 		if attacking and a.is_in_group("Enemies") and !hit:
 			hit = true
-			print("Hit " + a.name)
 			a.take_damage(damage)
 			break

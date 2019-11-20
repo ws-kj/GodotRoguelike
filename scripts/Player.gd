@@ -40,7 +40,7 @@ func process_movement(delta):
 		anim.play("idle")
 	
 	vel = vel.normalized() * speed
-	vel = move_and_slide(vel)
+	vel = move_and_slide_with_snap(vel, Vector2(4, 4))
 	
 func move_weapon():
 	var angle = get_local_mouse_position().angle()
