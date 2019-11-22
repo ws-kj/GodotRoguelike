@@ -8,7 +8,7 @@ export var pub_name = ""
 
 var bar
 
-onready var game_log = get_tree().get_current_scene().get_node("Player").get_node("UI").get_node("Log")
+onready var game_log = get_tree().get_current_scene().get_node("UI").get_node("Log")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
