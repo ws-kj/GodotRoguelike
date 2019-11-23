@@ -12,7 +12,7 @@ var last_container = null
 var last_pos = Vector2()
 
 func _ready():
-	pickup_item("test")
+	pickup_item("dagger")
 
 func _process(delta):
 	var cursor_pos = get_global_mouse_position()

@@ -3,9 +3,9 @@ extends Node
 const ICON_PATH = "res://assets/icons/"
 
 const ITEMS = {
-	"test": {
-		"icon": ICON_PATH + "icon.png",
-		"slot": "BODY"
+	"dagger": {
+		"icon": ICON_PATH + "dagger.png",
+		"slot": "MAIN_HAND"
 	},
 	"error": {
 		"icon": ICON_PATH + "icon.png",

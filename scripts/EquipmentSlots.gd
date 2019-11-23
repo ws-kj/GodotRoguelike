@@ -27,7 +27,7 @@ func grab_item(pos):
 	if item == null:
 		return null
 		
-	var item_slot = ItemDB.get_item(item.get_mdeta("id"))["slot"]
+	var item_slot = ItemDB.get_item(item.get_meta("id"))["slot"]
 	items[item_slot] = null
 	return item
 
