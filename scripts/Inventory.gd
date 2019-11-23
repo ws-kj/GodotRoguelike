@@ -11,9 +11,6 @@ var item_offset = Vector2()
 var last_container = null
 var last_pos = Vector2()
 
-func _ready():
-	pickup_item("dagger")
-
 func _process(delta):
 	var cursor_pos = get_global_mouse_position()
 	if Input.is_action_just_pressed("inv_grab"):

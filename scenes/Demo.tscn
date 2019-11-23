@@ -1,10 +1,11 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/tiles.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Crate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Sign.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/pickups/DaggerPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -980,7 +981,10 @@ position = Vector2( 1536, 256 )
 position = Vector2( 764, 384 )
 text = "Welcome to the tech demo!"
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="ItemPickup" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( 320, 130 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 64, 128 )
 
 [node name="Walls" type="TileMap" parent="."]
