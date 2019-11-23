@@ -49,6 +49,5 @@ func move_weapon():
 	
 func process_attack():
 	if Input.is_action_just_pressed("attack"):
-		print(weapon_position.get_children())
 		if weapon_position.get_children() != []:
 			weapon_position.get_child(0).attack()

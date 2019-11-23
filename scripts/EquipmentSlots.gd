@@ -30,6 +30,7 @@ func grab_item(pos):
 		
 	var item_slot = ItemDB.get_item(item.get_meta("id"))["slot"]
 	items[item_slot] = null
+	unequip_item(item)
 	return item
 
 func get_slot_under_pos(pos):
@@ -54,3 +55,10 @@ func equip_item(item):
 		for c in get_tree().get_current_scene().get_node("Player/WeaponPosition").get_children():
 			c.queue_free()
 		get_tree().get_current_scene().get_node("Player/WeaponPosition").add_child(inst)
+		
+func unequip_item(item):
+	var slot = ItemDB.get_item(item.get_meta("id"))["slot"]
+	if slot == "MAIN_HAND":
+		for c in get_tree().get_current_scene().get_node("Player/WeaponPosition").get_children():
+			c.queue_free()
+	
