@@ -4,6 +4,7 @@ export var texture = preload("res://assets/icons/dagger.png")
 export var item_name = "dagger"
 
 onready var inv = get_tree().get_current_scene().get_node("UI").get_node("Inventory")
+onready var game_log = get_tree().get_current_scene().get_node("UI").get_node("Log")
 
 func _ready():
 	$Sprite.texture = texture
@@ -13,4 +14,5 @@ func _process(delta):
 		if b.is_in_group("Player"):
 			if Input.is_action_pressed("interact"):
 				inv.pickup_item(item_name)
+				game_log.write("Picked up " + item_name)
 				queue_free()

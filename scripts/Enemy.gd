@@ -1,6 +1,6 @@
 extends Node2D
 
-export var max_hp = 1
+export var max_hp = 3
 var hp = max_hp
 export var show_hp = true
 
@@ -12,7 +12,7 @@ onready var game_log = get_tree().get_current_scene().get_node("UI").get_node("L
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	hp = max_hp
 	if show_hp:
 		bar = $HealthBar/TextureProgress
 		bar.hide()
@@ -21,7 +21,6 @@ func _ready():
 func take_damage(dmg):
 	bar.show()
 	hp -= dmg
-	game_log.write(pub_name + " took " + String(dmg) + " damage.")
 	
 	if show_hp:
 		bar.set_value((float(hp) / max_hp) * 100)

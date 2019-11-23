@@ -6,6 +6,9 @@ onready var inv_base = $InventoryBase
 onready var grid_bkpk = $GridBackPack
 onready var eq_slots = $EquipmentSlots
 
+onready var player = get_tree().get_current_scene().get_node("Player")
+onready var entities = get_tree().get_current_scene().get_node("Entities")
+
 var item_held = null
 var item_offset = Vector2()
 var last_container = null
@@ -52,9 +55,14 @@ func get_container_under_cursor(cursor_pos):
 	return null
 	
 func drop_item():
+	var pickup = load(ItemDB.get_item(item_held.get_meta("id"))["pickup"])
+	var inst = pickup.instance()
+	inst.position = player.position
+	entities.add_child(inst)
+	
 	item_held.queue_free()
 	item_held = null
-	
+
 func return_item():
 	item_held.rect_global_position = last_pos
 	last_container.insert_item(item_held)
