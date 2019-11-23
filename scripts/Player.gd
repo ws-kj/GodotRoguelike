@@ -3,7 +3,6 @@ extends KinematicBody2D
 onready var sprite = $Sprite
 onready var anim = $AnimationPlayer
 onready var weapon_position = $WeaponPosition
-onready var weapon = $WeaponPosition.get_child(0)
 
 export var hp = 10
 export var speed = 500
@@ -50,4 +49,6 @@ func move_weapon():
 	
 func process_attack():
 	if Input.is_action_just_pressed("attack"):
-		weapon.attack()
+		print(weapon_position.get_children())
+		if weapon_position.get_children() != []:
+			weapon_position.get_child(0).attack()

@@ -20,6 +20,7 @@ func insert_item(item):
 		return false
 	items[item_slot] = item
 	item.rect_global_position = slot.rect_global_position + slot.rect_size / 2 - item.rect_size / 2
+	equip_item(item)
 	return true
 		
 func grab_item(pos):
@@ -42,3 +43,14 @@ func get_thing_under_pos(arr, pos):
 		if thing != null and thing.get_global_rect().has_point(pos):
 			return thing
 	return null
+	
+func equip_item(item):
+	var scene_path = ItemDB.get_item(item.get_meta("id"))["scene"]
+	var scene = load(scene_path)
+	var slot = ItemDB.get_item(item.get_meta("id"))["slot"]
+	
+	var inst = scene.instance()
+	if slot == "MAIN_HAND":
+		for c in get_tree().get_current_scene().get_node("Player/WeaponPosition").get_children():
+			c.queue_free()
+		get_tree().get_current_scene().get_node("Player/WeaponPosition").add_child(inst)

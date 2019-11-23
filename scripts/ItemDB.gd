@@ -1,11 +1,13 @@
 extends Node
 
 const ICON_PATH = "res://assets/icons/"
+const SCENE_PATH = "res://scenes/items/"
 
 const ITEMS = {
 	"dagger": {
 		"icon": ICON_PATH + "dagger.png",
-		"slot": "MAIN_HAND"
+		"slot": "MAIN_HAND",
+		"scene": SCENE_PATH + "weapons/Dagger.tscn"
 	},
 	"error": {
 		"icon": ICON_PATH + "icon.png",
