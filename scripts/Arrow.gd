@@ -10,8 +10,11 @@ export var attack_speed = 0.5
 
 var can_attack = true
 
-export var speed = 400
+export var speed = 650
 var vel = Vector2()
+
+func _ready():
+	activate()
 
 func _physics_process(delta):
 	if active:

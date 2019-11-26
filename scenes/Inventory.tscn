@@ -49,7 +49,6 @@ stretch_mode = 2
 script = ExtResource( 5 )
 
 [node name="EquipmentSlots" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 576.0
 margin_top = 142.0
 margin_right = 768.0
