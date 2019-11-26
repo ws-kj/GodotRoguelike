@@ -6,6 +6,7 @@ onready var inv_base = $InventoryBase
 onready var grid_bkpk = $GridBackPack
 onready var eq_slots = $EquipmentSlots
 
+
 onready var player = get_tree().get_current_scene().get_node("Player")
 onready var entities = get_tree().get_current_scene().get_node("Entities")
 
@@ -14,12 +15,14 @@ var item_offset = Vector2()
 var last_container = null
 var last_pos = Vector2()
 
+
 func _process(delta):
 	var cursor_pos = get_global_mouse_position()
 	if Input.is_action_just_pressed("inv_grab"):
 		grab(cursor_pos)
 	if Input.is_action_just_released("inv_grab"):
 		release(cursor_pos)
+
 	if item_held != null:
 		item_held.rect_global_position = cursor_pos + item_offset
 		

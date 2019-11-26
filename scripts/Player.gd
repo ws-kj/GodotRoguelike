@@ -5,6 +5,9 @@ onready var anim = $AnimationPlayer
 onready var weapon_position = $WeaponPosition
 
 export var hp = 10
+
+
+
 export var base_speed = 100
 export var speed_multiplier = 3.5
 var speed = base_speed * speed_multiplier
