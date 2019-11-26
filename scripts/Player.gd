@@ -5,7 +5,9 @@ onready var anim = $AnimationPlayer
 onready var weapon_position = $WeaponPosition
 
 export var hp = 10
-export var speed = 500
+export var base_speed = 100
+export var speed_multiplier = 3.5
+var speed = base_speed * speed_multiplier
 
 onready var weapon_distance = weapon_position.position.length()
 
@@ -21,6 +23,7 @@ func _physics_process(delta):
 	
 func process_movement(delta):
 	vel = Vector2()
+	speed = base_speed * speed_multiplier
 	
 	if Input.is_action_pressed("move_forward"):
 		vel.y -= 1

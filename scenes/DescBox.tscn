@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Panel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/PressStart2P.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="DescBox" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" parent="." instance=ExtResource( 1 )]
+margin_bottom = 191.0
+
+[node name="Title" type="Label" parent="."]
+margin_left = 31.038
+margin_top = 33.7398
+margin_right = 111.038
+margin_bottom = 49.7398
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Title"
+
+[node name="Desc" type="Label" parent="."]
+margin_left = 31.0
+margin_top = 65.0
+margin_right = 220.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Description"

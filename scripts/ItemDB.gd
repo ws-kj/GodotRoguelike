@@ -6,6 +6,8 @@ const PICKUP_PATH = "res://scenes/pickups/"
 
 const ITEMS = {
 	"dagger": {
+		"name": "Dagger",
+		"desc": "A short, worn, dagger.",
 		"icon": ICON_PATH + "dagger.png",
 		"slot": "MAIN_HAND",
 		"scene": SCENE_PATH + "weapons/Dagger.tscn",
