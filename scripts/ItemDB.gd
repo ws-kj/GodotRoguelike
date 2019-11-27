@@ -13,6 +13,14 @@ const ITEMS = {
 		"scene": SCENE_PATH + "weapons/Dagger.tscn",
 		"pickup": PICKUP_PATH + "DaggerPickup.tscn"
 	},
+	"quiver": {
+		"name": "Quiver",
+		"desc": "A quiver that feels alive with magic.",
+		"icon": ICON_PATH + "quiver_basic.png",
+		"slot": "MAIN_HAND",
+		"scene": SCENE_PATH + "weapons/Quiver.tscn",
+		"pickup": PICKUP_PATH + "QuiverPickup.tscn"
+	},
 	"error": {
 		"icon": ICON_PATH + "icon.png",
 		"slot": "NONE"

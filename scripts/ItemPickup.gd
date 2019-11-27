@@ -1,7 +1,7 @@
 extends Node2D
 
-export var texture = preload("res://assets/icons/dagger.png")
-export var item_name = "dagger"
+export var texture = preload("res://assets/icons/quiver_basic.png")
+export var item_name = "quiver"
 
 onready var inv = get_tree().get_current_scene().get_node("UI").get_node("Inventory")
 onready var game_log = get_tree().get_current_scene().get_node("UI").get_node("Log")

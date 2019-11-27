@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 onready var player = get_parent().get_node("Player")
 
+onready var anim = $AnimationPlayer
+onready var light = $Light2D
+
 export var fallen = false
 export var active = true
 export var damage = 2
@@ -32,23 +35,32 @@ func _on_Area2D_body_entered(body):
 		if body.is_in_group("Enemies") and can_attack:
 			body.take_damage(damage)
 			can_attack = false
+			anim.play("Inactive")
 			yield(get_tree().create_timer(attack_speed), "timeout")
 			can_attack = true
-		if body.is_in_group("Player"):
-			deactivate()
-		if body.is_in_group("Obstacles"):
+		elif body.is_in_group("Player"):
+			deactivate(body)
+		elif body.is_in_group("Obstacles"):
 			fall()
 			
 func fall():
 	fallen = true
 	can_attack = false
+	light.hide()
+	#anim.play("Fallen")
 	
 func activate():
 	active = true
 	can_attack = true
+	anim.play("Active")
+	light.show()
 	show()
 	
-func deactivate():
+func deactivate(player):
 	active = false
 	can_attack = false
+	
+	player.get_node("WeaponPosition").get_child(0).has_arrow = true
+	light.hide()
 	hide()
+	queue_free()
