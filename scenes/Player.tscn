@@ -52,7 +52,7 @@ shape = SubResource( 1 )
 position = Vector2( 0.270203, -0.810547 )
 scale = Vector2( 2.04109, 2.04109 )
 texture = ExtResource( 2 )
-texture_scale = 0.5
+texture_scale = 0.75
 color = Color( 0.929412, 0.92549, 0.686275, 1 )
 
 [node name="InnerLight2D" type="Light2D" parent="."]
